@@ -1,0 +1,12 @@
+{
+  "name": "cse199r",
+  "version": "1.0.0",
+  "description": "Top-level project package.json with node test scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "node quality-assurance-agent/run-tests.js",
+    "test:node": "node quality-assurance-agent/run-tests.js"
+  },
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "quality-assurance-agent",
+  "version": "1.0.0",
+  "description": "QA agent tests for snake game",
+  "main": "run-tests.js",
+  "scripts": {
+    "test": "node run-tests.js",
+    "test:node": "node run-tests.js"
+  },
+  "author": "",
+  "license": "MIT"
+}

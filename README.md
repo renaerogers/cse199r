@@ -1,3 +1,3 @@
 # CSE 199R 
 
-Wrelcome to class. 
+Welcome to class. 
