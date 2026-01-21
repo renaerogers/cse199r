@@ -1,0 +1,15 @@
+#content {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f4; 
+}
+.sticky-note {
+    width: 200px;
+    height: 200px;
+    background-color: #fffa77; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}

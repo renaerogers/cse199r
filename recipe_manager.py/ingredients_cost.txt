@@ -1,0 +1,19 @@
+almond extract, 1 tbsp, 0.36
+almond extract, 1 tsp, 0.12 
+almond extract, 1/2 tsp, 0.06
+almond extract, 1/4 tsp, 0.03
+baking powder, 1 tbsp, 0.11
+baking powder, 1 tsp, 0.04
+baking soda, 1 tbsp, 0.03
+baking soda, 1 tsp, 0.01
+chocolate chips, 1 cup, 1.65
+chocolate chips, 1/2 cup, 0.82
+chocolate chips, 1/4 cup, 0.41
+cinnamon, 1 tbsp, 0.29
+cinnamon, 1 tsp, 0.10
+cinnamon, 1/2 tsp, 0.05
+cinnamon, 1/4 tsp, 0.025
+cinnamon, 1/8 tsp, 0.0125
+cocoa, 1 cup, 0.80
+cocoa, 1/2 cup, 0.40
+cocoa, 1 tbsp, 0.05
