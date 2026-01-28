@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css"> 
-    <script src="script.js" defer></script>
+    <script src="ls_whiteboard.js" defer></script>
 </head>
 <body id="content">
     <header>
@@ -14,19 +14,49 @@
             <h1>Great Ideas</h1>
         </div>
         <div class="right"> 
-            <p>Hello User</p>
+            <div class="people">
+                <p>People</p>
+                <bar id="people-dropdown1"></bar>
+                <bar id="people-dropdown2"></bar>
+            </div>
+            <bar id="rdivider1"></bar>
+            <div class="quotes">
+                <p>Quotes</p>
+                <bar id="people-quotes1"></bar>
+                <bar id="people-quotes2"></bar>
+            </div>
+            <bar id="rdivider2"></bar>
+            <div class="youtube">
+                <a href="youtube.com">Youtube</a>
+            </div>
+            <div class="camera">Camera</div>
+            <div class="share-menu">
+                <button id="share-btn">Share button</button>
+            </div>
+            <img id="user-icon" src="images/user_icon.png" alt="User Icon">
         </div>
     </header>
     <main>
-        <diV id="sidebar"> 
+        <div class="sidebar-top">
+            <div class="select-template"> 
+                <button>Temp</button>
+            </div>
+            <div class="rocket"> 
+                <p>Rocket</p>
+            </div>
+            <div>
+                <P>Logout?</P>
+            </div>
+        </div>
+        <div class="sidebar-middle"> 
             <button id="add-note-btn">Add Sticky Note</button>
             <button id="add-textbox-btn">Add Text Box</button>
             <button id="add-shape-btn">Add Shape</button>
             <button id="add-connector-btn">Add Connector</button>
-        </diV>
-        <div class="sticky-note">  
-            <p> This is a sticky note </p>
         </div>
+        <div class="sidebar-bottom"></div> 
+        <div class="sticky-note">Double-Click to edit</div>
+        <div class="sticky-note">Double-Click to edit</div>
     </main>
     <footer> 
 
