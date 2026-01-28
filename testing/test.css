@@ -1,0 +1,34 @@
+#test-body {
+    color: blueviolet;
+    background-color: lavender;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#banner {
+    width: 100%;
+    height: 120px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(103, 25, 175);
+    background-color: rgb(158, 158, 221);
+}
+header p {
+    font-weight: italic;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+}
+.checkerboard {
+    background-color: lavender;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+}
+.checkerboard grid-item {
+    width: 100px;
+    height: 100px;
+}
+.test-section {
+    background-color: rgb(158, 158, 221);
+    margin: 0 auto;
+}

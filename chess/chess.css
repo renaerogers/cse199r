@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0f1026;
+}
+
+/* Chessboard container */
+.chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 480px;
+    aspect-ratio: 1 / 1; /* ensures perfect square board */
+    border: 6px solid #7c3aed;
+}
+
+/* Squares */
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.1rem;
+    user-select: none;
+}
+
+/* High-contrast colors */
+.square:nth-child(odd) {
+    background-color: #96dcff; /* deep blue */
+}
+
+.square:nth-child(even) {
+    background-color: #a774ff; /* strong purple */
+}
+
+/* Flip colors every row */
+.chessboard > .square:nth-child(16n + 1),
+.chessboard > .square:nth-child(16n + 3),
+.chessboard > .square:nth-child(16n + 5),
+.chessboard > .square:nth-child(16n + 7),
+.chessboard > .square:nth-child(16n + 10),
+.chessboard > .square:nth-child(16n + 12),
+.chessboard > .square:nth-child(16n + 14),
+.chessboard > .square:nth-child(16n + 16) {
+    background-color: #a774ff;
+}
+
+.chessboard > .square:nth-child(16n + 2),
+.chessboard > .square:nth-child(16n + 4),
+.chessboard > .square:nth-child(16n + 6),
+.chessboard > .square:nth-child(16n + 8),
+.chessboard > .square:nth-child(16n + 9),
+.chessboard > .square:nth-child(16n + 11),
+.chessboard > .square:nth-child(16n + 13),
+.chessboard > .square:nth-child(16n + 15) {
+    background-color: #96dcff;
+}
+
+/* Pieces */
+.piece {
+    cursor: pointer;
+}
+
+.white {
+    color: #f9fafb;
+}
+
+.black {
+    color: #020617;
+}
+
+.square {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.piece.selected {
+    outline: 3px solid gold;
+    border-radius: 6px;
+}
