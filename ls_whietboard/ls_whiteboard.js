@@ -1,9 +1,19 @@
 const content = document.getElementById('content');
 
 document.querySelectorAll('.sticky-note').forEach(sticky => {
+    let cleared = false;
+
     sticky.addEventListener('dblclick', () => {
         sticky.contentEditable = "true";
         sticky.focus();
+        cleared = false; // reset for next edit
+    });
+
+    sticky.addEventListener('input', () => {
+        if (!cleared) {
+            sticky.textContent = '';
+            cleared = true;
+        }
     });
 
     sticky.addEventListener('blur', () => {
@@ -11,29 +21,98 @@ document.querySelectorAll('.sticky-note').forEach(sticky => {
     });
 });
 
-document.getElementById('add-sticky-note-btn').addEventListener('click', () => {
-    const newSticky = document.createElement('div');
-    newSticky.className = 'sticky-note';
-    newSticky.textContent = 'Double-Click to edit';
+const board = document.getElementById('board');
+const addSticky = document.getElementById('add-note-btn');
 
-    newSticky.style.position = 'absolute';
-    const maxX = content.clientWidth - 150;
-    const maxY = content.clientHeight - 150;
+let draggedNote = null;
+let offsetX = 0;
+let offsetY = 0;
 
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
+// Create a new sticky note
+function createStickyNote(x = 50, y = 50) {
+    const note = document.createElement('div');
+    note.className = 'sticky-note';
+    note.contentEditable = true;
+    note.textContent = 'Type here...';
 
-    newSticky.style.left = randomX + 'px';
-    newSticky.style.top = randomY + 'px';
+    note.style.left = x + 'px';
+    note.style.top = y + 'px';
 
-    newSticky.addEventListener('dblclick', () => {
-        sticky.contentEditable = "true";
-        sticky.focus();
-    });
+    board.appendChild(note);
 
-    newSticky.addEventListener('blur', () => {
-        newSticky.contentEditable = "false";
-    });
+    return note;
+}
 
-    content.appendChild(newSticky);
+// Add new sticky note button
+addSticky.addEventListener('click', () => {
+    const x = Math.random() * (board.clientWidth - 180);
+    const y = Math.random() * (board.clientHeight - 180);
+    createStickyNote(x, y);
+});
+
+// Drag start
+document.addEventListener('mousedown', (e) => {
+    if (e.target.classList.contains('sticky-note')) {
+        draggedNote = e.target;
+        draggedNote.classList.add('dragging');
+
+        offsetX = e.clientX - draggedNote.offsetLeft;
+        offsetY = e.clientY - draggedNote.offsetTop;
+    }
+});
+
+// Drag move
+document.addEventListener('mousemove', (e) => {
+    if (!draggedNote) return;
+
+    draggedNote.style.left = e.clientX - offsetX + 'px';
+    draggedNote.style.top = e.clientY - offsetY + 'px';
+});
+
+// Drag end
+document.addEventListener('mouseup', () => {
+    if (draggedNote) {
+        draggedNote.classList.remove('dragging');
+        draggedNote = null;
+    }
+});
+
+// Drag the board 
+
+let boardDragging = false;
+let boardOffsetX = 0;
+let boardOffsetY = 0;
+
+board.addEventListener('mousedown', (e) => {
+    // Prevent dragging when clicking a sticky note
+    if (e.target.classList.contains('sticky-note')) return;
+
+    boardDragging = true;
+    boardOffsetX = e.clientX - board.offsetLeft;
+    boardOffsetY = e.clientY - board.offsetTop;
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!boardDragging) return;
+
+    board.style.left = e.clientX - boardOffsetX + 'px';
+    board.style.top = e.clientY - boardOffsetY + 'px';
+});
+
+document.addEventListener('mouseup', () => {
+    boardDragging = false;
+});
+
+
+// Shape Dropdown Menu
+
+const addShapeBtn = document.getElementById('add-shape-btn');
+const shapeDropdown = document.getElementsByClassName('shape-dropdown');
+
+addShapeBtn.addEventListener('mouseenter', () => {
+    shapeDropdown.style.display = 'block';
+});
+
+addShapeBtn.addEventListener('mouseleave', () => {
+    shapeDropdown.style.display = 'none';
 });

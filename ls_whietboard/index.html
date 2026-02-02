@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lucid Clone</title>
     <link rel="stylesheet" href="styles.css"> 
     <script src="ls_whiteboard.js" defer></script>
 </head>
@@ -27,7 +27,7 @@
             </div>
             <bar id="rdivider2"></bar>
             <div class="youtube">
-                <a href="youtube.com">Youtube</a>
+                <a href="https://www.youtube.com/" target="_blank">Youtube</a>
             </div>
             <div class="camera">Camera</div>
             <div class="share-menu">
@@ -49,9 +49,18 @@
             </div>
         </div>
         <div class="sidebar-middle"> 
-            <button id="add-note-btn">Add Sticky Note</button>
+            <button id="select-btn">Select</button>
             <button id="add-textbox-btn">Add Text Box</button>
+            <button id="add-note-btn">Add Sticky Note</button>
             <button id="add-shape-btn">Add Shape</button>
+                <div class="shape-dropdown"> 
+                    <h4>Select Shape:</h4>
+                    <select id="shape-select">
+                        <option value="rectangle">Rectangle</option>
+                        <option value="circle">Circle</option>
+                        <option value="triangle">Triangle</option>
+                    </select>
+                </div>
             <button id="add-connector-btn">Add Connector</button>
         </div>
         <div class="sidebar-bottom"></div> 
