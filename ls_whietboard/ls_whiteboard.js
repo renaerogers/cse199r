@@ -6,7 +6,6 @@ document.querySelectorAll('.sticky-note').forEach(sticky => {
     sticky.addEventListener('dblclick', () => {
         sticky.contentEditable = "true";
         sticky.focus();
-        cleared = false; // reset for next edit
     });
 
     sticky.addEventListener('input', () => {
