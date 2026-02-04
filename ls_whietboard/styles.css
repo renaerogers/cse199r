@@ -14,6 +14,7 @@ header {
     padding-bottom: 20px;
     padding-top: -20px;
     margin: 0 auto;
+    z-index: 2;
 }
 
 .left {
@@ -24,6 +25,7 @@ header {
     grid-column: 1/2;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    z-index: 2;
 }
 .left img { 
     width: 80%;
@@ -45,6 +47,7 @@ header {
     grid-column: 3/4;
     display: grid;
     grid-template-columns: 1fr 0.25fr 1fr 0.25fr 1fr 1fr 1.5fr 1fr;
+    z-index: 2;
 }
 .people {
     width: 80%;
@@ -98,6 +101,7 @@ header {
     grid-template-columns: 1fr;
     padding: 10px;
     margin: 10px 10px 10px 0px;
+    z-index: 2;
 }
 
 
@@ -111,6 +115,7 @@ header {
     padding: 20px;
     padding: 10px;
     margin: 10px 10px 10px 0px;
+    z-index: 2;
 }
 
 .sticky-note {
@@ -126,6 +131,7 @@ header {
     box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
     cursor: grab;
     user-select: none;
+    z-index: 1;
 }
 
 .sticky-note:focus {
@@ -140,9 +146,11 @@ header {
 
 #board {
     position: absolute;
-    width: 800px;
-    height: 500px;
-    background: #f4f4f4;
+    width: 200%;
+    height: 200%;
+    background: rgb(232, 226, 226);
     border: 2px solid #aaa;
     cursor: move;
+    z-index: 0;
+    margin: 0 auto;
 }

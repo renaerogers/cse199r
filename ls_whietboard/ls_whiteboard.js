@@ -1,4 +1,5 @@
-const content = document.getElementById('content');
+
+// Make edits to the sticky notes editable on double click
 
 document.querySelectorAll('.sticky-note').forEach(sticky => {
     let cleared = false;
@@ -49,6 +50,7 @@ addSticky.addEventListener('click', () => {
     createStickyNote(x, y);
 });
 
+// Drag sticky notes 
 // Drag start
 document.addEventListener('mousedown', (e) => {
     if (e.target.classList.contains('sticky-note')) {
@@ -76,32 +78,44 @@ document.addEventListener('mouseup', () => {
     }
 });
 
-// Drag the board 
-
-let boardDragging = false;
-let boardOffsetX = 0;
-let boardOffsetY = 0;
+// Drag the board
+let dragging = false;
+let offset_X, offset_Y;
 
 board.addEventListener('mousedown', (e) => {
-    // Prevent dragging when clicking a sticky note
-    if (e.target.classList.contains('sticky-note')) return;
+  if (e.target.classList.contains('sticky-note')) return;
 
-    boardDragging = true;
-    boardOffsetX = e.clientX - board.offsetLeft;
-    boardOffsetY = e.clientY - board.offsetTop;
+  dragging = true;
+  offset_X = e.clientX - board.offsetLeft;
+  offset_Y = e.clientY - board.offsetTop;
 });
 
 document.addEventListener('mousemove', (e) => {
-    if (!boardDragging) return;
+  if (!dragging) return;
 
-    board.style.left = e.clientX - boardOffsetX + 'px';
-    board.style.top = e.clientY - boardOffsetY + 'px';
+  const viewportWidth  = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+
+  const boardWidth  = board.offsetWidth;
+  const boardHeight = board.offsetHeight;
+
+  let newLeft = e.clientX - offset_X;
+  let newTop  = e.clientY - offset_Y;
+
+  // HARD limits: edges may NEVER enter the viewport
+  const minLeft = viewportWidth - boardWidth;
+  const minTop  = viewportHeight - boardHeight;
+  const maxLeft = 0;
+  const maxTop  = 0;
+
+  board.style.left = clamp(newLeft, minLeft, maxLeft) + 'px';
+  board.style.top  = clamp(newTop,  minTop,  maxTop)  + 'px';
 });
+
 
 document.addEventListener('mouseup', () => {
-    boardDragging = false;
+  dragging = false;
 });
-
 
 // Shape Dropdown Menu
 

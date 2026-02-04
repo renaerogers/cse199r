@@ -1,0 +1,26 @@
+// Drag the board 
+/**
+let boardDragging = false;
+let boardOffsetX = 0;
+let boardOffsetY = 0;
+
+board.addEventListener('mousedown', (e) => {
+// Prevent dragging when clicking a sticky note
+if (e.target.classList.contains('sticky-note')) return;
+
+boardDragging = true;
+boardOffsetX = e.clientX - board.offsetLeft;
+boardOffsetY = e.clientY - board.offsetTop;
+});
+
+document.addEventListener('mousemove', (e) => {
+if (!boardDragging) return;
+
+board.style.left = e.clientX - boardOffsetX + 'px';
+board.style.top = e.clientY - boardOffsetY + 'px';
+});
+
+document.addEventListener('mouseup', () => {
+boardDragging = false;
+});
+*/
