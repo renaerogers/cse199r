@@ -6,6 +6,7 @@ document.querySelectorAll('.sticky-note').forEach(sticky => {
 
     sticky.addEventListener('dblclick', () => {
         sticky.contentEditable = "true";
+        sticky.style.textAlign = "center";
         sticky.focus();
     });
 

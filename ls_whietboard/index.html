@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucid Clone</title>
     <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="nav_styles.css">
     <script src="ls_whiteboard.js" defer></script>
 </head>
 <body id="content">
@@ -59,11 +60,17 @@
             <button id="add-shape-btn">Add Shape</button>
                 <div class="shape-dropdown"> 
                     <h4>Select Shape:</h4>
-                    <select id="shape-select">
-                        <option value="rectangle">Rectangle</option>
-                        <option value="circle">Circle</option>
-                        <option value="triangle">Triangle</option>
-                    </select>
+                    <div id="shape-select">
+                        <div value="rectangle">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <div value="circle">Circle</div>
+                        <div value="triangle">Triangle</div>
+                    </div>
                 </div>
             <button id="add-connector-btn">Add Connector</button>
         </div>

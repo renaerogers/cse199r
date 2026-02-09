@@ -1,0 +1,49 @@
+.people {
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+    grid-column: 1/2;
+}
+#rdivider1 {
+    grid-column: 2/3;
+}
+.quotes {
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+    grid-column: 3/4;
+}
+#rdivider2 {
+    grid-column: 4/5;
+}
+.youtube {
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+    grid-column: 5/6;
+}
+.camera {
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+    grid-column: 6/7;
+}
+.share-menu {
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+    grid-column: 7/8;
+}
+#user-icon {
+    width: 50%;
+    justify-self: center;
+    align-self: center;
+    grid-column: 8/9;
+}
+
+#shape-dropdown {
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+    
+}

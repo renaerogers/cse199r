@@ -1,0 +1,37 @@
+.resizable-container {
+    /* Required for native resize: both; */
+    overflow: auto; 
+    border: 2px solid #333;
+    padding: 10px;
+    width: 200px; /* Initial width */
+    height: 150px; /* Initial height */
+    position: relative;
+    
+    /* Native browser resizing */
+    resize: both; 
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 500px;
+    max-height: 400px;
+}
+
+/* Style for the rectangle *inside* the container */
+.resizable-rect {
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Optional styling for custom JS handles (if not using native resize) 
+.handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    Add specific positioning for each handle 
+}
