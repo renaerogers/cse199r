@@ -6,12 +6,12 @@
     <title>Lucid Clone</title>
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="nav_styles.css">
-    <script src="ls_whiteboard.js" defer></script>
+    <!-- <script src="ls_whiteboard.js" defer></script> -->
+     <script src="possible.js" defer></script>
 </head>
 <body id="content">
     <div id="board">
-        <div class="sticky-note">Double-Click to edit</div>
-        <div class="sticky-note">Double-Click to edit</div>
+        
     </div>
     <header>
         <div class="left">
@@ -50,7 +50,12 @@
                 <p>Rocket</p>
             </div>
             <div>
-                <P>Logout?</P>
+                <label for="import-btn">Import:</label>
+                <select id="imageSelector" onchange="triggerImageSelection()">
+                    <option value="">Select an option</option>
+                    <option value="browse">Browse my images</option>
+                </select>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;" multiple>
             </div>
         </div>
         <div class="sidebar-middle"> 
